@@ -1,7 +1,9 @@
 # fishy-sia
 Public repository for the FISHY Secure Interface Abstraction (SIA)
 
-This respository describes the implementation corresponding to the Secure infrastructure Abstraction (**SIA**) module of the [FISHY project](https://fishy-project.eu). An initial design of the SIA has been presented in [deliverable D2.2](https://fishy-project.eu/library/deliverables) of FISHY. In the following, we review the architectural design of this module, describing the refinements that have been specified as a result of the research and implementation work conducted during the i the project. The following picture outlines the SIA architectural design.
+This respository describes the implementation corresponding to the Secure infrastructure Abstraction (**SIA**) module of the [FISHY project](https://fishy-project.eu). The design and implementation aspects of the SIA have been puyblished in [deliverable D2.2](https://fishy-project.eu/library/deliverables) of FISHY. 
+
+In the following, we provide a brief description of the architectural design of this module, making reference to the implementation of it components. The following picture outlines the SIA architectural design.
 
 ![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f713efc7-323d-4630-b6f1-679dd6b86b6d)
 
