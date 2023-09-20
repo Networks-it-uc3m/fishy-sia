@@ -3,7 +3,10 @@ Public repository for the FISHY Secure Interface Abstraction (SIA)
 
 This respository describes the implementation corresponding to the Secure infrastructure Abstraction (**SIA**) module of the [FISHY project](https://fishy-project.eu). The design and implementation aspects of the SIA have been puyblished in [deliverable D2.2](https://fishy-project.eu/library/deliverables) of FISHY. 
 
-In the following, we provide a brief description of the architectural design of this module, making reference to the implementation of it components. The following picture outlines the SIA architectural design.
+In the following, we provide a brief description of the architectural design of this module, making reference to the implementation of it components. 
+
+## SIA design
+The following picture outlines the SIA architectural design.
 
 ![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f713efc7-323d-4630-b6f1-679dd6b86b6d)
 
@@ -18,3 +21,11 @@ The SIA operates at a domain level providing the proper means to interact with t
 The OF is deployed at every domain, whereas the SIA NBI is a centralized component that can be used by other modules of the FISHY platform and service providers (SIA tenants). To support a proper interaction with any specific management and orchestration software stacks that exist in a domain, the SIA includes an adaptable southbound interface (**SBI**).
 
 Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).
+
+## SIA implementation
+The picture below outlines the different open-source technolgies and standard APIs that have been used to implement the SIA module.
+
+![SIA-implementation](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348)
+
+
+
