@@ -27,4 +27,10 @@ This picture succintly represents the different open-source technologies, standa
 ![SIA-implementation](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348)
 
 
-
+| Component | Open source technologies | Supported APIs |
+| --- | --- |
+|SIA NBI | | |
+|SIA OF | | |
+| NED overlay | | |
+|CCIPS | | |
+|MON | | |
