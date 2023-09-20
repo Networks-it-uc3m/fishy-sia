@@ -28,9 +28,9 @@ This picture succintly represents the different open-source technologies, standa
 
 
 | Component | Open source technologies | Supported APIs |
-| --- | --- |
-|SIA NBI | | |
-|SIA OF | | |
+| --- | --- | --- |
+| SIA NBI | | |
+| SIA OF | | |
 | NED overlay | | |
-|CCIPS | | |
-|MON | | |
+| CCIPS | | |
+| MON | | |
