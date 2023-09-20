@@ -22,7 +22,7 @@ The OF is deployed at every domain, whereas the SIA NBI is a centralized compone
 Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).
 
 ## SIA implementation
-The picture below succintly represetns the different open-source technologies, standard APIs and protocols that have been used to implement the SIA module.
+The picture below succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the SIA module.
 
 ![SIA-implementation](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348)
 
