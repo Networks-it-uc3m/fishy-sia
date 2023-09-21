@@ -34,12 +34,20 @@ Focusing on the implementation aspects, the SIA NBI is based on [HAProxy](https:
 On the other hand, the OF component is based on Open Source MANO ([OSM](https://osm.etsi.org)). OSM is an ETSI-hosted project that provides a Management and Orchestration (MANO) software stack aligned with the ETSI NFV specifications. A noteworthy aspect is that OSM exposes an API based on [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). Under the context of the project, this allows the SIA NBI to properly distribute the requests to the correspondent API of each OF available at every domain, and being compliant with the standard specification.
 
 ### The SIA Southbound interface (SBI)
+As a remarkable design aspect, the SIA must provide its functionalities regardless of the technologies that are used at every domain (e.g., ([OpenStack](https://www.openstack.org) or [Kubernetes](https://kubernetes.io)). To this purpose, the module includes an adaptable southbound interface (SBI), supporting the interaction with different NFV management and orchestration (MANO) technologies.
+
+In this regard, the software that provides the basis for the SIA OF, [ETSI OSM](https://osm.etsi.org)), already provides support for OpenStack infrastructures, since it is an already well-established solution for NFV technologies. In consequence, no modifications are required in those domains that implement that virtual infrastructure management solution. However, new platforms based on container technologies like Kubernetes (K8s) are starting to become an enticing prospect for the deployment of VNFs in cloud and edge environments, since containers provide a lightweight solution for the development and deployment of VNFs and Network Services (NS). 
+
+However, OSM has limited support for the deployment of network services in K8s clusters since it only allows the deployment of VNFs as regular K8s pods. Due to the nature of the functionalities that needed to be deployed in the project, it was necessary to have a solution inside the cluster to enables the creation and management of virtual links and networks to securely interconnect the VNFs of a network service, and isolate data traffic transmitted on these virtual links and networks.
+
+In this regard, the [L2S-M](http://l2sm) K8s operator provides the necessary tools to create isolated link-layer virtual networks inside K8s clusters. Therefore, the SIA SBI in K8s clusters is implemented using a combination of OSM and L2S-M to fully enable its proper functionality, providing the flexibility to interact with any management and orchestration tools in a particular domain. L2S-M is available as an open-source project..
+
 
 ### The SIA Network Edge Device (NED) overlay
 
 ### The SIA Centrally Controlled IPSec (CCIPS).
 
-# The SIA Monitor (MON)
+### The SIA Monitor (MON)
 
 
 
