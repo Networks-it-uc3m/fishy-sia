@@ -47,11 +47,12 @@ NEDs are programmable switching functions, implemented using [Open vSwitch](http
 
 The IDCO functions as a SDN controller, implemented as an internal application that runs within an instance of the Open Network Operating System ([ONOS](https://opennetworking.org/onos/)). All the NEDs connect to the IDCO via the OpenFlow 1.3 protocol. The IDCO is accessed through the SIA NBI using a custom HTTP REST API inspired in the [ETSI GS NFV-IFA 032](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=68078) MSCS Management Interface that allows creating and deleting inter-domain virtual networks. The IDCO has been released as open source software in the following [repository](https://github.com/Networks-it-uc3m/snd-based-inter-cluster-communications).
 
-### The SIA Centrally Controlled IPSec (CCIPS).
+### The SIA Centrally Controlled IPSec (CCIPS)
+
 
 ### The SIA Monitor (MON)
 The MON is a SIA component that is able to monitor different parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), a well-known open-source monitoring system. The graphical user interface has been built using the [Grafana](https://grafana.com) visualization tool. 
 
-The SIA MON component has been used a software base in another Europen project, [CODECO](https://he-codeco.eu), where it has completely re-designed to improve its flexibility and capacity to collect network metrics over layer-2 overlay networks. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
+The SIA MON component has been used as as software base in another Europen project, [CODECO](https://he-codeco.eu), where it has been re-designed to improve its flexibility and scalability to collect network performance metrics on multi-domain cloud native ecosystems. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
 
 
