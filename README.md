@@ -52,6 +52,6 @@ The IDCO functions as a SDN controller, implemented as an internal application t
 ### The SIA Monitor (MON)
 The MON is a SIA component that is able to monitor different parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), a well-known open-source monitoring system. The graphical user interface has been built using the [Grafana](https://grafana.com) visualization tool. 
 
-The SIA MON component has been used a software base in another Europen project, CODECO, where it has completely re-designed to improve its flexibility and capacity to collect network metrics over layer-2 overlay networks. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
+The SIA MON component has been used a software base in another Europen project, [CODECO](https://he-codeco.eu), where it has completely re-designed to improve its flexibility and capacity to collect network metrics over layer-2 overlay networks. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
 
 
