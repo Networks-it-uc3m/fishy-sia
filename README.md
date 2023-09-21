@@ -24,19 +24,14 @@ This picture succintly represents the different open-source technologies, standa
 
 ![SIA-implementation](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348)
 
-## The SIA NBI
+## The SIA NBI and the OF
 The SIA NBI provides the point-of-access to interact with the NFV infrastructure resources that are available at every domain. This point-of-access is offered to other FISHY blocks and components, such as the EDC, as well as to service providers. To support this functionality, the SIA NBI interfaces with the Orchestration Function (OF) available at every domain.
 
 The SIA NBI is aligned with the Application Programming Interface (API) specification defined by ETSI for their NFV orchestrator, which is included in [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). This enables the SIA NBI to be consistent with standard specifications. In this regard, the NFV descriptors are based on the YANG models specified in [ETSI NFV-SOL 006](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=63572) to ensure the interoperability and compatibility with other NFV solutions. 
 
 Focusing on the implementation aspects, the SIA NBI is based on [HAProxy](https://www.haproxy.com). HAProxy is an open-source load-balancing software commonly used in web application architectures and content delivery networks (CDNs). It operates as a reverse proxy, receiving requests and distributing them to different backend servers according to established load-balancing rules. In addition to its main function as a load balancer, HAProxy also offers other useful features, such as the ability to protect against Distributed Denial-of-Service (DDoS) attacks and compatibility with different network protocols such as HTTP, TCP, and SSL.
 
-On the other hand, the OF component is based on Open Source MANO ([OSM](https://osm.etsi.org). OSM is an ETSI-hosted project that provides a Management and Orchestration (MANO) software stack aligned with the ETSI NFV specifications. A noteworthy aspect is that OSM exposes an API based on [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). Under the context of the project, this allows the SIA NBI to properly distribute the requests to the correspondent API of each OF available at every domain, and being compliant with the standard specification.
+On the other hand, the OF component is based on Open Source MANO ([OSM](https://osm.etsi.org)). OSM is an ETSI-hosted project that provides a Management and Orchestration (MANO) software stack aligned with the ETSI NFV specifications. A noteworthy aspect is that OSM exposes an API based on [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). Under the context of the project, this allows the SIA NBI to properly distribute the requests to the correspondent API of each OF available at every domain, and being compliant with the standard specification.
 
-| Component | Open source technologies | Supported APIs |
-| --- | --- | --- |
-| SIA NBI | | |
-| SIA OF | | |
-| NED overlay | | |
-| CCIPS | | |
-| MON | | |
+## The SIA Southbound interface (SBI)
+
