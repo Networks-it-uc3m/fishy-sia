@@ -22,9 +22,7 @@ Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS*
 ## SIA implementation
 This picture succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the differente components of the SIA module. Specific details on the implementation are provided for each component in subsequent subsections.
 
-<div style="text-align: center;">
 <img src="https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348" width=70%>
-</div>
 
 ### The SIA NBI and the OF
 The SIA NBI provides the point-of-access to interact with the NFV infrastructure resources that are available at every domain. This point-of-access is offered to other FISHY blocks and components, such as the EDC, as well as to service providers. To support this functionality, the SIA NBI interfaces with the Orchestration Function (OF) available at every domain.
