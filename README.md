@@ -1,15 +1,13 @@
 # The FISHY Secure infrastructure Abstraction 
 
-This repository briefly describes the design and implementation corresponding to the Secure infrastructure Abstraction (**SIA**) module of the [FISHY project](https://fishy-project.eu). Specific details concerning the SIA are available in [deliverable D2.2](https://fishy-project.eu/library/deliverables) of FISHY. 
-
-In the following, we provide a brief description of the architectural design of this module, making reference to the implementation of it components. 
+This repository briefly describes the design of the Secure infrastructure Abstraction (**SIA**) module of the [FISHY project](https://fishy-project.eu).  It also provides information on the open-source technologies, protocols and API specificacions that have been used to implement this module. Comprehensive details concerning the SIA design and implementation are available in [deliverable D2.2](https://fishy-project.eu/library/deliverables) of FISHY.
 
 ## SIA design
 The following picture outlines the SIA architectural design.
 
 ![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f713efc7-323d-4630-b6f1-679dd6b86b6d)
 
-The SIA is responsible for the provisioning of a data-plane interface to support external and inter-domain communications within the FISHY platform (e.g., between an IoT/edge infrastructure and a cloud infrastructure, or between multiple cloud infrastructures). In addition, it controls the network access to the FISHY domains, protecting data traffic entering and leaving the domains. This functionality is mainly provided by the SIA Network Edge Device (**NED**) component of the SIA. The SIA also includes a specific component for monitoring and telemetry information collection (SIA Monitor, **MON**) associated with the NED operations.
+The SIA is responsible for the provisioning of a data-plane interface to support external and inter-domain communications within the FISHY platform (e.g., between an IoT/edge infrastructure and a cloud infrastructure, or between multiple cloud infrastructures). In addition, it controls the network access to the FISHY domains, protecting data traffic entering and leaving the domains. This functionality is mainly provided by the SIA Network Edge Device (**NED**) component of the SIA.
 
 According to the FISHY approach, organizations are structured into different realms, based on the cybersecurity constraints, policies or rules, and realms are divided into domains, where a domain is defined as a group of assets with certain relationships (same network, infrastructure, location, etc.). 
 
@@ -19,12 +17,21 @@ The SIA operates at a domain level providing the proper means to interact with t
 
 The OF is deployed at every domain, whereas the SIA NBI is a centralized component that can be used by other modules of the FISHY platform and service providers (SIA tenants). To support a proper interaction with any specific management and orchestration software stacks that exist in a domain, the SIA includes an adaptable southbound interface (**SBI**).
 
-Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).
+Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).  Finally, the SIA also includes a specific component for monitoring and telemetry information collection (SIA Monitor, **MON**) associated with the NED operations.
 
 ## SIA implementation
-This picture succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the SIA module. Specific links to these technologies are provided in the table below.
+This picture succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the differente components of the SIA module. Specific details on the implementation are provided for each component in subsequent subsections.
 
 ![SIA-implementation](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348)
+
+## The SIA NBI
+The SIA NBI provides the point-of-access to interact with the NFV infrastructure resources that are available at every domain. This point-of-access is offered to other FISHY blocks and components, such as the EDC, as well as to service providers. To support this functionality, the SIA NBI interfaces with the Orchestration Function (OF) available at every domain.
+
+The SIA NBI is aligned with the Application Programming Interface (API) specification defined by ETSI for their NFV orchestrator, which is included in [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). This enables the SIA NBI to be consistent with standard specifications. In this regard, the NFV descriptors are based on the YANG models specified in [ETSI NFV-SOL 006](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=63572) to ensure the interoperability and compatibility with other NFV solutions. 
+
+Focusing on the implementation aspects, the SIA NBI is based on [HAProxy](https://www.haproxy.com). HAProxy is an open-source load-balancing software commonly used in web application architectures and content delivery networks (CDNs). It operates as a reverse proxy, receiving requests and distributing them to different backend servers according to established load-balancing rules. In addition to its main function as a load balancer, HAProxy also offers other useful features, such as the ability to protect against Distributed Denial-of-Service (DDoS) attacks and compatibility with different network protocols such as HTTP, TCP, and SSL.
+
+On the other hand, the OF component is based on Open Source MANO ([OSM](https://osm.etsi.org). OSM is an ETSI-hosted project that provides a Management and Orchestration (MANO) software stack aligned with the ETSI NFV specifications. A noteworthy aspect is that OSM exposes an API based on [ETSI NFV-SOL 005](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=64365). Under the context of the project, this allows the SIA NBI to properly distribute the requests to the correspondent API of each OF available at every domain, and being compliant with the standard specification.
 
 | Component | Open source technologies | Supported APIs |
 | --- | --- | --- |
