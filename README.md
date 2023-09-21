@@ -17,7 +17,7 @@ The SIA operates at a domain level providing the proper means to interact with t
 
 The OF is deployed at every domain, whereas the SIA NBI is a centralized component that can be used by other modules of the FISHY platform and service providers (SIA tenants). To support a proper interaction with any specific management and orchestration software stacks that exist in a domain, the SIA includes an adaptable southbound interface (**SBI**).
 
-Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).  Finally, the SIA also includes a specific component for monitoring and telemetry information collection (SIA Monitor, **MON**) associated with the NED operations.
+Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS**). The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. This solution is composed of a centralized E2E manager (controller) and two or more agents, based on IPsec engine in IKE-less mode (no IKE protocol is needed).  Finally, the SIA also includes a specific component for monitoring (SIA Monitor, **MON**) associated with the NED and other domain operations.
 
 ## SIA implementation
 This picture succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the differente components of the SIA module. Specific details on the implementation are provided for each component in subsequent subsections.
@@ -45,6 +45,9 @@ In this regard, a K8s oeprator has been developed within the project, [L2S-M](ht
 ### The SIA Centrally Controlled IPSec (CCIPS).
 
 ### The SIA Monitor (MON)
+The MON is a SIA component that is able to monitor different network parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), an open-source monitoring system that is primarily used for monitoring and alerting on the performance of various systems and services, and . The system is capable of retrieving metrics from a variety of sources, including applications, servers, and other devices, and it can also trigger alerts when certain conditions are met. This makes it a powerful and flexible monitoring system that is widely used in cloud and container environments, making it ideal for FISHY Kubernetes-based integration.
 
+In order to display all the desired metrics and dashboards and in order to make it useful to monitor different domains, it has been necessary to include a more powerful visualization tool.
+[Grafana] (https://grafana.com/docs/grafana/) has been selected [19], as it is a powerful and popular data visualization and monitoring platform that is fully compatible with Prometheus data sources. Grafana allows to create –and if desired, to share– interactive and informative dashboards, alerts and notifications to monitor their systems and services. Besides, it allows the addition of multiple data sources, making it optimum to monitor the different domains that can make up a multi-domain NFV environment each one with their own Prometheus deployment.
 
 
