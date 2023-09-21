@@ -41,6 +41,11 @@ In this regard, the software that provides the basis for the SIA OF, [ETSI OSM](
 In this regard, a K8s oeprator has been developed within the project, [L2S-M](http://l2sm), providing the necessary tools to create isolated link-layer virtual networks inside K8s clusters. The SIA SBI in K8s clusters is implemented using a combination of OSM, L2S-M and Kubernetes, such that NFV services can be deployed on cloun native platforms. L2S-M is available as an open-source project.
 
 ### The SIA Network Edge Device (NED) overlay
+The SIA architecture includes the ability to create and delete virtual link-layer networks that connect VNFs running in different domains. This way, remote VNFs can communicate as if they were connected on the same local network. This inter-domain connectivity is enabled by SDN technologies and comprises two main elements: the Network Edge Device (**NED**) **overlay network** and the Inter-Domain Connectivity Orchestrator (**IDCO**).
+
+NEDs are programmable switching functions, implemented using [Open vSwitch](https://www.openvswitch.org). They forward traffic between domains. Each domain containing VNFs that require connectivity with other VNFs in different domains must have at least one NED. The NEDs are connected between them through point-to-point protected IP tunnels (i.e., Linux [VXLAN](https://www.rfc-editor.org/rfc/rfc7348.txt) tunnels), thereby creating a NED overlay network that interconnects all the FISHY domains. The topology of the NED overlay is established manually in our implementation.
+
+The IDCO functions as a SDN controller, implemented as an internal application that runs within an instance of the Open Network Operating System ([ONOS](https://opennetworking.org/onos/)). All the NEDs connect to the IDCO via the OpenFlow 1.3 protocol. The IDCO is accessed through the SIA NBI using a custom HTTP REST API inspired in the [ETSI GS NFV-IFA 032](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=68078) MSCS Management Interface that allows creating and deleting inter-domain virtual networks.
 
 ### The SIA Centrally Controlled IPSec (CCIPS).
 
