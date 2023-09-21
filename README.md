@@ -50,9 +50,8 @@ The IDCO functions as a SDN controller, implemented as an internal application t
 ### The SIA Centrally Controlled IPSec (CCIPS).
 
 ### The SIA Monitor (MON)
-The MON is a SIA component that is able to monitor different network parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), an open-source monitoring system that is primarily used for monitoring and alerting on the performance of various systems and services, and . The system is capable of retrieving metrics from a variety of sources, including applications, servers, and other devices, and it can also trigger alerts when certain conditions are met. This makes it a powerful and flexible monitoring system that is widely used in cloud and container environments, making it ideal for FISHY Kubernetes-based integration.
+The MON is a SIA component that is able to monitor different parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), a well-known open-source monitoring system. The graphical user interface has been built using the [Grafana](https://grafana.com) visualization tool. 
 
-In order to display all the desired metrics and dashboards and in order to make it useful to monitor different domains, it has been necessary to include a more powerful visualization tool.
-[Grafana] (https://grafana.com/docs/grafana/) has been selected [19], as it is a powerful and popular data visualization and monitoring platform that is fully compatible with Prometheus data sources. Grafana allows to create –and if desired, to share– interactive and informative dashboards, alerts and notifications to monitor their systems and services. Besides, it allows the addition of multiple data sources, making it optimum to monitor the different domains that can make up a multi-domain NFV environment each one with their own Prometheus deployment.
+The SIA MON component has been used a software base in another Europen project, CODECO, where it has completely re-designed to improve its flexibility and capacity to collect network metrics over layer-2 overlay networks. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
 
 
