@@ -48,7 +48,9 @@ NEDs are programmable switching functions, implemented using [Open vSwitch](http
 The IDCO functions as a SDN controller, implemented as an internal application that runs within an instance of the Open Network Operating System ([ONOS](https://opennetworking.org/onos/)). All the NEDs connect to the IDCO via the OpenFlow 1.3 protocol. The IDCO is accessed through the SIA NBI using a custom HTTP REST API inspired in the [ETSI GS NFV-IFA 032](https://portal.etsi.org/webapp/workprogram/Report_WorkItem.asp?WKI_ID=68078) MSCS Management Interface that allows creating and deleting inter-domain virtual networks. The IDCO has been released as open source software in the following [repository](https://github.com/Networks-it-uc3m/snd-based-inter-cluster-communications).
 
 ### The SIA Centrally Controlled IPSec (CCIPS)
+The CCIPS goes beyond the classical point-to-point IPsec setup and provides a centralized architectural solution to control multiple IPsec endpoints or gateways. The CCIPS is composed by a controller and two or more agents, deployed where the IPsec tunnel is established. In this IKE-less case, the RFC specifies a procedure on the re-keying process that is handled by the controller, when requested by the nodes.
 
+On one side, the CCIPS controller architecture relies on a REST API as the central component to provide the NBI and establish sessions with the agents using the [NETCONF protocol](https://www.rfc-editor.org/rfc/rfc6241). On the other side, the CCIPS agents must provide an endpoint for the NETCONF protocol and manage the YANG models.
 
 ### The SIA Monitor (MON)
 The MON is a SIA component that is able to monitor different parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), a well-known open-source monitoring system. The graphical user interface has been built using the [Grafana](https://grafana.com) visualization tool. 
