@@ -7,6 +7,8 @@ The following picture outlines the SIA architectural design.
 
 ![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f713efc7-323d-4630-b6f1-679dd6b86b6d)
 
+![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/SIA_design.png)
+
 The SIA is responsible for the provisioning of a data-plane interface to support external and inter-domain communications within the FISHY platform (e.g., between an IoT/edge infrastructure and a cloud infrastructure, or between multiple cloud infrastructures). In addition, it controls the network access to the FISHY domains, protecting data traffic entering and leaving the domains. This functionality is mainly provided by the SIA Network Edge Device (**NED**) component of the SIA.
 
 According to the FISHY approach, organizations are structured into different realms, based on the cybersecurity constraints, policies or rules, and realms are divided into domains, where a domain is defined as a group of assets with certain relationships (same network, infrastructure, location, etc.). 
