@@ -5,15 +5,13 @@ This repository briefly describes the design of the Secure infrastructure Abstra
 ## SIA design
 The following picture outlines the SIA architectural design.
 
-![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f713efc7-323d-4630-b6f1-679dd6b86b6d)
-
-![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/SIA_design.png)
+![SIA-architecture](https://github.com/Networks-it-uc3m/fishy-sia/blob/2363699be34aa5ecfdb1741dd505a727550720c3/SIA_design.png)
 
 The SIA is responsible for the provisioning of a data-plane interface to support external and inter-domain communications within the FISHY platform (e.g., between an IoT/edge infrastructure and a cloud infrastructure, or between multiple cloud infrastructures). In addition, it controls the network access to the FISHY domains, protecting data traffic entering and leaving the domains. This functionality is mainly provided by the SIA Network Edge Device (**NED**) component of the SIA.
 
 According to the FISHY approach, organizations are structured into different realms, based on the cybersecurity constraints, policies or rules, and realms are divided into domains, where a domain is defined as a group of assets with certain relationships (same network, infrastructure, location, etc.). 
 
-<img src="https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/7d9d7635-5122-4ee3-880c-27011a600cb2)" width=40%>
+<img src="https://github.com/Networks-it-uc3m/fishy-sia/blob/2363699be34aa5ecfdb1741dd505a727550720c3/FISHY-domains.png" width=40%>
 
 The SIA operates at a domain level providing the proper means to interact with the NFV infrastructure resources that are available at every domain, regardless of the particular technologies that are used ([OpenStack](https://www.openstack.org), [Kubernetes](https://kubernetes.io), etc.). This functionality is provided by the SIA Northbound interface (**NBI**) and an Orchestration Function (**OF**). 
 
@@ -24,7 +22,7 @@ Another tool that is part of the SIA is the Centrally Controlled IPSec (**CCIPS*
 ## SIA implementation
 This picture succintly represents the different open-source technologies, standard APIs and protocols that have been used to implement the differente components of the SIA module. Specific details on the implementation are provided for each component in subsequent subsections.
 
-<img src="https://github.com/Networks-it-uc3m/fishy-sia/assets/36502934/f245357c-fee3-47d6-9b4a-9f2c266ab348" width=70%>
+<img src="https://github.com/Networks-it-uc3m/fishy-sia/blob/2363699be34aa5ecfdb1741dd505a727550720c3/SIA-implementation.png" width=70%>
 
 ### The SIA NBI and the OF
 The SIA NBI provides the point-of-access to interact with the NFV infrastructure resources that are available at every domain. This point-of-access is offered to other FISHY blocks and components, such as the EDC, as well as to service providers. To support this functionality, the SIA NBI interfaces with the Orchestration Function (OF) available at every domain.
