@@ -55,6 +55,6 @@ On one side, the CCIPS controller architecture relies on a REST API as the centr
 ### The SIA Monitor (MON)
 The MON is a SIA component that is able to monitor different parameters of multi-domain NFV environments. The implementation of the MON component is based on [Prometheus](https://prometheus.io/docs/), a well-known open-source monitoring system. The graphical user interface has been built using the [Grafana](https://grafana.com) visualization tool. 
 
-The SIA MON component has been used as as software base in another Europen project, [CODECO](https://he-codeco.eu), where it has been re-designed to improve its flexibility and capacity to collect network performance metrics on multi-domain cloud native ecosystems. The development has been publised under an open-source license, being available on the [public CODECO repository]()).
+The SIA MON component has been used as as software base in another Europen project, [CODECO](https://he-codeco.eu), where it has been re-designed to improve its flexibility and capacity to collect network performance metrics on multi-domain cloud native ecosystems. The development has been publised under an open-source license, being available on the [public CODECO repository](https://gitlab.eclipse.org/eclipse-research-labs/codeco-project/network-management-and-adaptation-netma/secure-connectivity/-/tree/main/LPM?ref_type=heads)).
 
 
